@@ -22,19 +22,23 @@
 <body>
   <h1>Welcome to my week 2 project</h1>
   <h2>Python web application</h2>
-  <p> This weeks project i used mariadb, python, nginx and html to create this web page. 
-MariaDB was used as a database for traffic counting on the page. 
-It works through Python which fetches and writes data.That data is passed through Gunicorn to Nginx. 
-Nginx catches requests from users to pass them right back. All of these are 
+  <p> This weeks project uses MariaDB, Python, Nginx and HTML. 
+MariaDB is used as a database for traffic counting on the page. 
+It works through Python, which fetches and writes the data. That data is then passed to the HTML template. 
+Nginx catches requests from users to pass them right back to the application,
 </p>
 <h2>Traffic counter</h2>
 
   <h3> Webpage loaded: {{ kaynnit }}</h3>
 
-<p>Traffic counter works as an python application that stores the count permanently in a database table. 
-Everytime the webpage is opened it will execute a Python script and writes the new value to database. 
-Because of this the value wont reset even if app server restarts.</p>
+<p>The traffic counter works as a python application that stores the count permanently in the database. 
+Everytime the webpage is opened, it will execute a Python script and writes the updated value to MariaDB. 
+That is why the value wont reset even if application server restarts.</p>
 
+<h2>Restart Test result</h2>
+<p>When Gunicorn was restarted, the counter data remained fully intact because it is loaded dynamically from MariaDB. 
+  Nginx rerouted the traffic to the new process fast, and neither Nginx nor MariaDB needed to be restarted.
+</p>
 <h2> Links</h2>
 
 <h3><a href="/"> Week 1 page here</a></h3>
