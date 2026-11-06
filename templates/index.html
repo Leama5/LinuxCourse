@@ -11,21 +11,34 @@
       padding: 0 20px;
       font-family: sans-serif;
       line-height: 1.6;
-      background: #FFE8F3;
-      color: #B26CFF;
+      background: #FFE4F6;
+      color: #FF6082;
     }
     h1, h2 { color: #705EFF; }
+	h3 { color: #B26CFF; }
     pre { background: #fff; padding: 16px; overflow-x: auto; }
   </style>
 </head>
 <body>
-  <h1>My Linux Server</h1>
-  <p>Welcome to my Week 2 project: Python web application</p>
+  <h1>Welcome to my week 2 project</h1>
+  <h2>Python web application</h2>
+  <p> This weeks project i used mariadb, python, nginx and html to create this web page. 
+MariaDB was used as a database for traffic counting on the page. 
+It works through Python which fetches and writes data.That data is passed through Gunicorn to Nginx. 
+Nginx catches requests from users to pass them right back. All of these are 
+</p>
+<h2>Traffic counter</h2>
 
-  <h2> Visitors on this page</h2>
-<p> Webpage loaded: {{ kaynnit }}</p>
-<p><a href="/"> Week 1 page here</a></p>
-<p><a href="https://github.com/Leama5/LinuxCourse.git"> My GitHub link here</a></p>
+  <h3> Webpage loaded: {{ kaynnit }}</h3>
+
+<p>Traffic counter works as an python application that stores the count permanently in a database table. 
+Everytime the webpage is opened it will execute a Python script and writes the new value to database. 
+Because of this the value wont reset even if app server restarts.</p>
+
+<h2> Links</h2>
+
+<h3><a href="/"> Week 1 page here</a></h3>
+<h3><a href="https://github.com/Leama5/LinuxCourse.git"> My GitHub link here</a></h3>
 
 </body>
 </html>
