@@ -27,9 +27,6 @@ def kasvata_laskuria():
     try:
         with yhteys.cursor() as kursori:
             kursori.execute(
-                "UPDATE laskuri SET kaynnit = kaynnit + 1 WHERE id = 1"
-            )
-            kursori.execute(
                 "SELECT kaynnit FROM laskuri WHERE id = 1"
             )
             kaynnit = kursori.fetchone()[0]
